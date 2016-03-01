@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/177/trunk/WebServices/NursingHome/NursingHome
+END
+packages.config
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome/packages.config
+END
+Web.Debug.config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/177/trunk/WebServices/NursingHome/NursingHome/Web.Debug.config
+END
+Global.asax
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/50/trunk/WebServices/NursingHome/NursingHome/Global.asax
+END
+NursingHome.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/166/trunk/WebServices/NursingHome/NursingHome/NursingHome.csproj
+END
+Mailer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/153/trunk/WebServices/NursingHome/NursingHome/Mailer.cs
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/50/trunk/WebServices/NursingHome/NursingHome/favicon.ico
+END
+Global.asax.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome/Global.asax.cs
+END
+Web.Release.config
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/177/trunk/WebServices/NursingHome/NursingHome/Web.Release.config
+END
+Web.config
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/153/trunk/WebServices/NursingHome/NursingHome/Web.config
+END

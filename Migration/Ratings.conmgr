@@ -1,0 +1,121 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Ratings"
+  DTS:DTSID="{A59EB242-4B56-48B7-B34F-B76A4D9A403F}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1033"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x0022_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Users\Allen\Desktop\Data\Nursing_Home_Compare_-_Provider_Ratings.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="10"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Provider Number"
+          DTS:DTSID="{AFFF6FFD-6A15-46C5-AC9E-AB296E1B6278}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="75"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Nursing Home Name"
+          DTS:DTSID="{F51CAE39-1C05-49B6-954A-7C493C2524D0}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="75"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Street"
+          DTS:DTSID="{41A6A00D-935A-4F32-A641-7484213E8DDC}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="75"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="City"
+          DTS:DTSID="{A4EC4FBB-0AB8-43B5-8E66-A12A0141B959}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="2"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="State"
+          DTS:DTSID="{5DDD3E6A-88AD-4749-B74F-AF413344E522}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Zip Code"
+          DTS:DTSID="{17BE52D7-C176-4AA7-BED2-A30746BCAEB4}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="20"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Phone"
+          DTS:DTSID="{8880455B-D07E-4240-92F0-CC3F7E859C55}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="17"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Overall Star Rating"
+          DTS:DTSID="{141D050B-B318-4139-9989-AEE8D636F18C}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="17"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Health Inspections Star Rating"
+          DTS:DTSID="{6ACCB577-5607-4557-B154-6F293B1C74C5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="17"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Nurse Staffing Star Rating"
+          DTS:DTSID="{07CDE389-56B8-4623-B0D5-615DF3275389}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:DataType="17"
+          DTS:TextQualified="True"
+          DTS:ObjectName="Quality Measures Star Rating"
+          DTS:DTSID="{A325191D-351A-42E9-A021-F6F8AA2F661B}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000A_"
+          DTS:DataType="17"
+          DTS:TextQualified="True"
+          DTS:ObjectName="RN Only Star Rating"
+          DTS:DTSID="{DB6A4365-8ACC-467F-9DA5-338CA4BA236E}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,689 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="ALLEN-PC\Allen"
+  DTS:CreatorComputerName="ALLEN-PC"
+  DTS:CreationDate="7/21/2012 10:19:49 AM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{7C3C0450-38F7-4E32-AF34-1D6D32E5262F}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Rating"
+  DTS:DTSID="{FAB05150-3EDC-4D19-839E-4C8CDA67C176}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:DTSID="{B877184B-B365-48AE-B67D-BCB5683B3596}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Ratings"
+              name="Ratings"
+              componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+              description="Flat File Source"
+              localeId="1033"
+              usesDispositions="true"
+              version="1"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+              <properties>
+                <property
+                  name="RetainNulls"
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null.">true</property>
+                <property
+                  name="FileNameColumnName"
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Ratings.Connections[FlatFileConnection]"
+                  name="FlatFileConnection"
+                  connectionManagerID="{A59EB242-4B56-48B7-B34F-B76A4D9A403F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Ratings]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Provider Number]"
+                      name="Provider Number"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Provider Number]"
+                      length="10"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Provider Number]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Nursing Home Name]"
+                      name="Nursing Home Name"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Nursing Home Name]"
+                      length="75"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Nursing Home Name]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Street]"
+                      name="Street"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Street]"
+                      length="75"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Street]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[City]"
+                      length="75"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[City]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[State]"
+                      length="2"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[State]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Zip Code]"
+                      name="Zip Code"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Zip Code]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Zip Code]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Phone]"
+                      name="Phone"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Phone]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Phone]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Overall Star Rating]"
+                      name="Overall Star Rating"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Overall Star Rating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Overall Star Rating]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Health Inspections Star Rating]"
+                      name="Health Inspections Star Rating"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Health Inspections Star Rating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Health Inspections Star Rating]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Nurse Staffing Star Rating]"
+                      name="Nurse Staffing Star Rating"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Nurse Staffing Star Rating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Nurse Staffing Star Rating]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Quality Measures Star Rating]"
+                      name="Quality Measures Star Rating"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Quality Measures Star Rating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Quality Measures Star Rating]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[RN Only Star Rating]"
+                      name="RN Only Star Rating"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[RN Only Star Rating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[RN Only Star Rating]">
+                      <properties>
+                        <property
+                          name="FastParse"
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                        <property
+                          name="UseBinaryFormat"
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format.">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Provider Number]"
+                      name="Provider Number"
+                      dataType="wstr"
+                      length="10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Nursing Home Name]"
+                      name="Nursing Home Name"
+                      dataType="str"
+                      length="75"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Street]"
+                      name="Street"
+                      dataType="str"
+                      length="75"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      name="City"
+                      dataType="str"
+                      length="75"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      name="State"
+                      dataType="str"
+                      length="2"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Zip Code]"
+                      name="Zip Code"
+                      dataType="i8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Phone]"
+                      name="Phone"
+                      dataType="i8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Overall Star Rating]"
+                      name="Overall Star Rating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Health Inspections Star Rating]"
+                      name="Health Inspections Star Rating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Nurse Staffing Star Rating]"
+                      name="Nurse Staffing Star Rating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[Quality Measures Star Rating]"
+                      name="Quality Measures Star Rating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].ExternalColumns[RN Only Star Rating]"
+                      name="RN Only Star Rating"
+                      dataType="ui1" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output]"
+                  name="Flat File Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="text"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SQL Server Destination"
+              name="SQL Server Destination"
+              componentClassID="{F452EAF3-5EF0-43F1-8067-09DDF0BC6316}"
+              description="SQL Server Destination"
+              version="5"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5">
+              <properties>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="BulkInsertTableName"
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify">[dbo].[Rating]</property>
+                <property
+                  name="BulkInsertCheckConstraints"
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option.">true</property>
+                <property
+                  name="BulkInsertFirstRow"
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify">-1</property>
+                <property
+                  name="BulkInsertFireTriggers"
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option.">false</property>
+                <property
+                  name="BulkInsertKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option.">false</property>
+                <property
+                  name="BulkInsertKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="BulkInsertLastRow"
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify">-1</property>
+                <property
+                  name="BulkInsertMaxErrors"
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option.">-1</property>
+                <property
+                  name="BulkInsertOrder"
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"></property>
+                <property
+                  name="BulkInsertTablock"
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option.">true</property>
+                <property
+                  name="Timeout"
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify">30</property>
+                <property
+                  name="MaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\SQL Server Destination.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{97BB8EDC-C473-457D-A3B6-5D6376C624B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NursingHome]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input]"
+                  name="SQL Server Destination Input"
+                  hasSideEffects="true">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Provider Number]"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Provider Number]"
+                      externalMetadataColumnId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[HomeID]"
+                      cachedName="Provider Number"
+                      cachedDataType="wstr"
+                      cachedLength="10" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Overall Star Rating]"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Overall Star Rating]"
+                      externalMetadataColumnId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[OverallRating]"
+                      cachedName="Overall Star Rating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Health Inspections Star Rating]"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Health Inspections Star Rating]"
+                      externalMetadataColumnId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[HealthInspectionRating]"
+                      cachedName="Health Inspections Star Rating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Nurse Staffing Star Rating]"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Nurse Staffing Star Rating]"
+                      externalMetadataColumnId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[NurseRating]"
+                      cachedName="Nurse Staffing Star Rating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Quality Measures Star Rating]"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[Quality Measures Star Rating]"
+                      externalMetadataColumnId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[QualityRating]"
+                      cachedName="Quality Measures Star Rating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[RN Only Star Rating]"
+                      lineageId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output].Columns[RN Only Star Rating]"
+                      externalMetadataColumnId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[RegisteredNurseRating]"
+                      cachedName="RN Only Star Rating"
+                      cachedDataType="ui1" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[HomeID]"
+                      name="HomeID"
+                      dataType="wstr"
+                      length="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[OverallRating]"
+                      name="OverallRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[HealthInspectionRating]"
+                      name="HealthInspectionRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[NurseRating]"
+                      name="NurseRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[QualityRating]"
+                      name="QualityRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[RegisteredNurseRating]"
+                      name="RegisteredNurseRating"
+                      dataType="ui1" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Ratings.Outputs[Flat File Source Output]"
+              endId="Package\Data Flow Task\SQL Server Destination.Inputs[SQL Server Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Rating"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Rating"
+      DTS:DTSID="{A4D31E62-B0D5-4CE6-BC96-9E9C2B2AB515}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{97BB8EDC-C473-457D-A3B6-5D6376C624B6}"
+          SQLTask:SqlStatementSource="delete from Rating" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Delete Rating"
+      DTS:To="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{BDC62AE6-4150-4007-AB50-06320FE987A7}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task"
+          TopLeft="224.083329974363,156.399997179508" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Delete Rating"
+          TopLeft="234.916663146267,71.899998690486" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="302.333329893648,113.899998690486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.499998489022"
+              Start="0,0"
+              End="0,34.999998489022">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.999998489022" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186.666666666667,46"
+          Id="Package\Data Flow Task\SQL Server Destination"
+          TopLeft="178.249997324,180.666663412253" />
+        <NodeLayout
+          Size="112.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Ratings"
+          TopLeft="218.249996727953,20.7666662714878" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="273.08333035931,63.4333329381545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,117.233330474099"
+              Start="0,0"
+              End="0,109.733330474099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,109.733330474099" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\SQL Server Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

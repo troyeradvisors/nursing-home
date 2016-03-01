@@ -1,0 +1,2753 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="ALLEN-PC\Allen"
+  DTS:CreatorComputerName="ALLEN-PC"
+  DTS:CreationDate="7/24/2012 10:07:10 AM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{72030BE3-3808-49CE-A9B2-BC22FB1C5439}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:DTSID="{12D12687-AFD0-411C-9092-444BEED012C3}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:DTSID="{2E0F12AA-A054-49D7-802B-99ECC1F67516}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              name="Derived Column"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              usesDispositions="true"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Derived Column Input"
+                  description="Input to the Derived Column Transformation">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[HealthSurveyDate]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthSurveyDate]"
+                      cachedName="HealthSurveyDate"
+                      cachedDataType="dbDate" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[FireSurveyDate]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[FireSurveyDate]"
+                      cachedName="FireSurveyDate"
+                      cachedDataType="dbDate" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  name="Derived Column Output"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      name="Z_OPT"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">1</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      name="Z_ENT"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">3</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">3</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[HealthSurveySeconds]"
+                      name="HealthSurveySeconds"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[HealthSurveySeconds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">[DATEDIFF]("Second",(DT_DBTIMESTAMP)"1/1/2001",#{Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthSurveyDate]})</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">DATEDIFF("Second",(DT_DBTIMESTAMP)"1/1/2001",HealthSurveyDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FIreSurveySeconds]"
+                      name="FIreSurveySeconds"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FIreSurveySeconds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">[DATEDIFF]("Second",(DT_DBTIMESTAMP)"1/1/2001",#{Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[FireSurveyDate]})</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">DATEDIFF("Second",(DT_DBTIMESTAMP)"1/1/2001",FireSurveyDate)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column 1"
+              name="Derived Column 1"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              usesDispositions="true"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Derived Column Input"
+                  description="Input to the Derived Column Transformation">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                  name="Derived Column Output"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      name="Z_OPT"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">1</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      name="Z_ENT"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">5</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">5</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column 1 1"
+              name="Derived Column 1 1"
+              componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              usesDispositions="true"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column 1 1.Inputs[Derived Column Input]"
+                  name="Derived Column Input"
+                  description="Input to the Derived Column Transformation">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output]"
+                  name="Derived Column Output"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      name="Z_OPT"
+                      lineageId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">1</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      name="Z_ENT"
+                      lineageId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          name="Expression"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          containsID="true">2</property>
+                        <property
+                          name="FriendlyExpression"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          containsID="true"
+                          expressionType="Notify">2</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Error Output]"
+                  name="Derived Column Error Output"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1 1.Inputs[Derived Column Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\vCountryAverage"
+              name="vCountryAverage"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[vCountryAverage]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">0</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\vCountryAverage.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{97BB8EDC-C473-457D-A3B6-5D6376C624B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NursingHome]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedNurseHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedStaffHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[CertifiedNurseAssistantHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[Occupancy]"
+                      name="Occupancy"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[Occupancy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[Occupancy]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].ExternalColumns[Occupancy]"
+                      name="Occupancy"
+                      dataType="r8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[Occupancy]"
+                      name="Occupancy"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[Occupancy]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\vHome"
+              name="vHome"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[vHome]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">0</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\vHome.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{97BB8EDC-C473-457D-A3B6-5D6376C624B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NursingHome]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ID]"
+                      length="6"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[ID]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Name]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Street]"
+                      name="Street"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Street]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Street]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[City]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[City]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CountyCode]"
+                      name="CountyCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CountyCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CountyCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CountyName]"
+                      name="CountyName"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CountyName]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CountyName]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[StateCode]"
+                      name="StateCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[StateCode]"
+                      length="2"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[StateCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ZipCode]"
+                      name="ZipCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ZipCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[ZipCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[PhoneNumber]"
+                      name="PhoneNumber"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[PhoneNumber]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumber]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      name="Latitude"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Latitude]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Longitude]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CategoryType]"
+                      name="CategoryType"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CategoryType]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CategoryType]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[OwnershipType]"
+                      name="OwnershipType"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[OwnershipType]"
+                      length="100"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[OwnershipType]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthSurveyDate]"
+                      name="HealthSurveyDate"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthSurveyDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[HealthSurveyDate]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[FireSurveyDate]"
+                      name="FireSurveyDate"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[FireSurveyDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[FireSurveyDate]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CertifiedBedCount]"
+                      name="CertifiedBedCount"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CertifiedBedCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CertifiedBedCount]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ResidentCount]"
+                      name="ResidentCount"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ResidentCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[ResidentCount]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[SprinklerStatus]"
+                      name="SprinklerStatus"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[SprinklerStatus]"
+                      length="75"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[SprinklerStatus]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsInHospital]"
+                      name="IsInHospital"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsInHospital]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsInHospital]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsMultipleNursingHomeOwnership]"
+                      name="IsMultipleNursingHomeOwnership"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsMultipleNursingHomeOwnership]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsMultipleNursingHomeOwnership]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CouncilType]"
+                      name="CouncilType"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CouncilType]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CouncilType]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsInContinuingCareRetirementCommunity]"
+                      name="IsInContinuingCareRetirementCommunity"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsInContinuingCareRetirementCommunity]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsInContinuingCareRetirementCommunity]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HasQualitySurvey]"
+                      name="HasQualitySurvey"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HasQualitySurvey]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[HasQualitySurvey]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsSpecialFocusFacility]"
+                      name="IsSpecialFocusFacility"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsSpecialFocusFacility]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsSpecialFocusFacility]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthInspectionRating]"
+                      name="HealthInspectionRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthInspectionRating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[HealthInspectionRating]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[NurseRating]"
+                      name="NurseRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[NurseRating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[NurseRating]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[OverallRating]"
+                      name="OverallRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[OverallRating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[OverallRating]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[QualityRating]"
+                      name="QualityRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[QualityRating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[QualityRating]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[RegisteredNurseRating]"
+                      name="RegisteredNurseRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[RegisteredNurseRating]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseRating]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[LicensedNurseHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[LicensedStaffHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CertifiedNurseAssistantHoursPerResidentDay]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      name="ID"
+                      dataType="wstr"
+                      length="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      name="Name"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Street]"
+                      name="Street"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      name="City"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CountyCode]"
+                      name="CountyCode"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CountyName]"
+                      name="CountyName"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
+                      name="StateCode"
+                      dataType="wstr"
+                      length="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[ZipCode]"
+                      name="ZipCode"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumber]"
+                      name="PhoneNumber"
+                      dataType="i8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
+                      name="Latitude"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
+                      name="Longitude"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CategoryType]"
+                      name="CategoryType"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[OwnershipType]"
+                      name="OwnershipType"
+                      dataType="wstr"
+                      length="100" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[HealthSurveyDate]"
+                      name="HealthSurveyDate"
+                      dataType="dbDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[FireSurveyDate]"
+                      name="FireSurveyDate"
+                      dataType="dbDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CertifiedBedCount]"
+                      name="CertifiedBedCount"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[ResidentCount]"
+                      name="ResidentCount"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[SprinklerStatus]"
+                      name="SprinklerStatus"
+                      dataType="wstr"
+                      length="75" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsInHospital]"
+                      name="IsInHospital"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsMultipleNursingHomeOwnership]"
+                      name="IsMultipleNursingHomeOwnership"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CouncilType]"
+                      name="CouncilType"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsInContinuingCareRetirementCommunity]"
+                      name="IsInContinuingCareRetirementCommunity"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[HasQualitySurvey]"
+                      name="HasQualitySurvey"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[IsSpecialFocusFacility]"
+                      name="IsSpecialFocusFacility"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[HealthInspectionRating]"
+                      name="HealthInspectionRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[NurseRating]"
+                      name="NurseRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[OverallRating]"
+                      name="OverallRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[QualityRating]"
+                      name="QualityRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseRating]"
+                      name="RegisteredNurseRating"
+                      dataType="ui1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].ExternalColumns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      dataType="r8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      length="6"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Street]"
+                      name="Street"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Street]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[City]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CountyCode]"
+                      name="CountyCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CountyCode]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CountyName]"
+                      name="CountyName"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CountyName]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                      name="StateCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                      length="2"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ZipCode]"
+                      name="ZipCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ZipCode]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[PhoneNumber]"
+                      name="PhoneNumber"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[PhoneNumber]"
+                      dataType="i8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                      name="Latitude"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Latitude]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                      name="Longitude"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[Longitude]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CategoryType]"
+                      name="CategoryType"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CategoryType]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[OwnershipType]"
+                      name="OwnershipType"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[OwnershipType]"
+                      length="100"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[HealthSurveyDate]"
+                      name="HealthSurveyDate"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[HealthSurveyDate]"
+                      dataType="dbDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[FireSurveyDate]"
+                      name="FireSurveyDate"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[FireSurveyDate]"
+                      dataType="dbDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CertifiedBedCount]"
+                      name="CertifiedBedCount"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CertifiedBedCount]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ResidentCount]"
+                      name="ResidentCount"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ResidentCount]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[SprinklerStatus]"
+                      name="SprinklerStatus"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[SprinklerStatus]"
+                      length="75"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsInHospital]"
+                      name="IsInHospital"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsInHospital]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsMultipleNursingHomeOwnership]"
+                      name="IsMultipleNursingHomeOwnership"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsMultipleNursingHomeOwnership]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CouncilType]"
+                      name="CouncilType"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CouncilType]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsInContinuingCareRetirementCommunity]"
+                      name="IsInContinuingCareRetirementCommunity"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsInContinuingCareRetirementCommunity]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[HasQualitySurvey]"
+                      name="HasQualitySurvey"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[HasQualitySurvey]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsSpecialFocusFacility]"
+                      name="IsSpecialFocusFacility"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[IsSpecialFocusFacility]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[HealthInspectionRating]"
+                      name="HealthInspectionRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[HealthInspectionRating]"
+                      dataType="ui1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[NurseRating]"
+                      name="NurseRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[NurseRating]"
+                      dataType="ui1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[OverallRating]"
+                      name="OverallRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[OverallRating]"
+                      dataType="ui1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[QualityRating]"
+                      name="QualityRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[QualityRating]"
+                      dataType="ui1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseRating]"
+                      name="RegisteredNurseRating"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseRating]"
+                      dataType="ui1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\vStateAverage"
+              name="vStateAverage"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[vStateAverage]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">0</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\vStateAverage.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{97BB8EDC-C473-457D-A3B6-5D6376C624B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[NursingHome]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[StateCode]"
+                      name="StateCode"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[StateCode]"
+                      length="2"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[StateCode]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedNurseHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedStaffHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[CertifiedNurseAssistantHoursPerResidentDay]" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[Occupancy]"
+                      name="Occupancy"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[Occupancy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[Occupancy]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
+                      name="StateCode"
+                      dataType="wstr"
+                      length="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].ExternalColumns[Occupancy]"
+                      name="Occupancy"
+                      dataType="r8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                      name="StateCode"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                      length="2"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[Occupancy]"
+                      name="Occupancy"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[Occupancy]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      name="RegisteredNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      name="LicensedNurseHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      name="LicensedStaffHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      name="CertifiedNurseAssistantHoursPerResidentDay"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      dataType="r8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ZCountryAverage"
+              name="ZCountryAverage"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"ZCOUNTRYAVERAGE"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ZCountryAverage.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLite3 Datasource]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[Z_OPT]"
+                      lineageId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_OPT]"
+                      cachedName="Z_OPT"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[Z_ENT]"
+                      lineageId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_ENT]"
+                      cachedName="Z_ENT"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY]"
+                      cachedName="CertifiedNurseAssistantHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[LicensedNurseHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDNURSEHOURSPERRESIDENTDAY]"
+                      cachedName="LicensedNurseHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[LicensedStaffHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDSTAFFHOURSPERRESIDENTDAY]"
+                      cachedName="LicensedStaffHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[Occupancy]"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[Occupancy]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZOCCUPANCY]"
+                      cachedName="Occupancy"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].Columns[RegisteredNurseHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSEHOURSPERRESIDENTDAY]"
+                      cachedName="RegisteredNurseHoursPerResidentDay"
+                      cachedDataType="r8" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_PK]"
+                      name="Z_PK"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_ENT]"
+                      name="Z_ENT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_OPT]"
+                      name="Z_OPT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY]"
+                      name="ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDNURSEHOURSPERRESIDENTDAY]"
+                      name="ZLICENSEDNURSEHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDSTAFFHOURSPERRESIDENTDAY]"
+                      name="ZLICENSEDSTAFFHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZOCCUPANCY]"
+                      name="ZOCCUPANCY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSEHOURSPERRESIDENTDAY]"
+                      name="ZREGISTEREDNURSEHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ZCountryAverage.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\ZCountryAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ZCountryAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\ZCountryAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ZHome"
+              name="ZHome"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"ZHOME"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ZHome.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLite3 Datasource]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[Z_OPT]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[Z_OPT]"
+                      cachedName="Z_OPT"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[Z_ENT]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[Z_ENT]"
+                      cachedName="Z_ENT"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[CertifiedBedCount]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CertifiedBedCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDBEDCOUNT]"
+                      cachedName="CertifiedBedCount"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[CountyCode]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CountyCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOUNTYCODE]"
+                      cachedName="CountyCode"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[HasQualitySurvey]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HasQualitySurvey]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZHASQUALITYSURVEY]"
+                      cachedName="HasQualitySurvey"
+                      cachedDataType="bool" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[HealthInspectionRating]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[HealthInspectionRating]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZHEALTHINSPECTIONRATING]"
+                      cachedName="HealthInspectionRating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[NurseRating]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[NurseRating]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZNURSINGRATING]"
+                      cachedName="NurseRating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[OverallRating]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[OverallRating]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZOVERALLRATING]"
+                      cachedName="OverallRating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[PhoneNumber]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[PhoneNumber]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZPHONENUMBER]"
+                      cachedName="PhoneNumber"
+                      cachedDataType="i8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[QualityRating]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[QualityRating]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZQUALITYRATING]"
+                      cachedName="QualityRating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[RegisteredNurseRating]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[RegisteredNurseRating]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSERATING]"
+                      cachedName="RegisteredNurseRating"
+                      cachedDataType="ui1" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[ResidentCount]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ResidentCount]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZRESIDENTCOUNT]"
+                      cachedName="ResidentCount"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[ZipCode]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ZipCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZZIPCODE]"
+                      cachedName="ZipCode"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY]"
+                      cachedName="CertifiedNurseAssistantHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[Latitude]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Latitude]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLATITUDE]"
+                      cachedName="Latitude"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[LicensedNurseHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDNURSEHOURSPERRESIDENTDAY]"
+                      cachedName="LicensedNurseHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[LicensedStaffHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDSTAFFHOURSPERRESIDENTDAY]"
+                      cachedName="LicensedStaffHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[Longitude]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Longitude]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLONGITUDE]"
+                      cachedName="Longitude"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[RegisteredNurseHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSEHOURSPERRESIDENTDAY]"
+                      cachedName="RegisteredNurseHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[CategoryType]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CategoryType]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCATEGORYTYPE]"
+                      cachedName="CategoryType"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[City]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[City]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCITY]"
+                      cachedName="City"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[CouncilType]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CouncilType]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOUNCILTYPE]"
+                      cachedName="CouncilType"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[CountyName]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[CountyName]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOUNTYNAME]"
+                      cachedName="CountyName"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[ID]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[ID]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZID]"
+                      cachedName="ID"
+                      cachedDataType="wstr"
+                      cachedLength="6" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[Name]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Name]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZNAME]"
+                      cachedName="Name"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[OwnershipType]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[OwnershipType]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZOWNERSHIPTYPE]"
+                      cachedName="OwnershipType"
+                      cachedDataType="wstr"
+                      cachedLength="100" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[SprinklerStatus]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[SprinklerStatus]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZSPRINKLERSTATUS]"
+                      cachedName="SprinklerStatus"
+                      cachedDataType="wstr"
+                      cachedLength="75" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[StateCode]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[StateCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZSTATECODE]"
+                      cachedName="StateCode"
+                      cachedDataType="wstr"
+                      cachedLength="2" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[Street]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[Street]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZSTREET]"
+                      cachedName="Street"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[IsInContinuingCareRetirementCommunity]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsInContinuingCareRetirementCommunity]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISINCONTINUINGCARERETIREMENTCOMMUNITY]"
+                      cachedName="IsInContinuingCareRetirementCommunity"
+                      cachedDataType="bool" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[IsInHospital]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsInHospital]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISINHOSPITAL]"
+                      cachedName="IsInHospital"
+                      cachedDataType="bool" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[IsMultipleNursingHomeOwnership]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsMultipleNursingHomeOwnership]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISMULTIPLENURSINGHOMEOWNERSHIP]"
+                      cachedName="IsMultipleNursingHomeOwnership"
+                      cachedDataType="bool" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[IsSpecialFocusFacility]"
+                      lineageId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output].Columns[IsSpecialFocusFacility]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISSPECIALFOCUSFACILITY]"
+                      cachedName="IsSpecialFocusFacility"
+                      cachedDataType="bool" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[HealthSurveySeconds]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[HealthSurveySeconds]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZHEALTHSURVEYDATE]"
+                      cachedName="HealthSurveySeconds"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].Columns[FIreSurveySeconds]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FIreSurveySeconds]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZFIRESURVEYDATE]"
+                      cachedName="FIreSurveySeconds"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[Z_PK]"
+                      name="Z_PK"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[Z_ENT]"
+                      name="Z_ENT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[Z_OPT]"
+                      name="Z_OPT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDBEDCOUNT]"
+                      name="ZCERTIFIEDBEDCOUNT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOMMENTCACHESIZE]"
+                      name="ZCOMMENTCACHESIZE"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOUNTYCODE]"
+                      name="ZCOUNTYCODE"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZHASQUALITYSURVEY]"
+                      name="ZHASQUALITYSURVEY"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZHEALTHINSPECTIONRATING]"
+                      name="ZHEALTHINSPECTIONRATING"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISINCONTINUINGCARERETIREMENTCOMMUNITY]"
+                      name="ZISINCONTINUINGCARERETIREMENTCOMMUNITY"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISINHOSPITAL]"
+                      name="ZISINHOSPITAL"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISMULTIPLENURSINGHOMEOWNERSHIP]"
+                      name="ZISMULTIPLENURSINGHOMEOWNERSHIP"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZISSPECIALFOCUSFACILITY]"
+                      name="ZISSPECIALFOCUSFACILITY"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZNURSINGRATING]"
+                      name="ZNURSINGRATING"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZOVERALLRATING]"
+                      name="ZOVERALLRATING"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZPHONENUMBER]"
+                      name="ZPHONENUMBER"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZPICTURECACHESIZE]"
+                      name="ZPICTURECACHESIZE"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZQUALITYRATING]"
+                      name="ZQUALITYRATING"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSERATING]"
+                      name="ZREGISTEREDNURSERATING"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZRESIDENTCOUNT]"
+                      name="ZRESIDENTCOUNT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZZIPCODE]"
+                      name="ZZIPCODE"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY]"
+                      name="ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOMMENTCACHEDATE]"
+                      name="ZCOMMENTCACHEDATE"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZFIRESURVEYDATE]"
+                      name="ZFIRESURVEYDATE"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZHEALTHSURVEYDATE]"
+                      name="ZHEALTHSURVEYDATE"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLATITUDE]"
+                      name="ZLATITUDE"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDNURSEHOURSPERRESIDENTDAY]"
+                      name="ZLICENSEDNURSEHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDSTAFFHOURSPERRESIDENTDAY]"
+                      name="ZLICENSEDSTAFFHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZLONGITUDE]"
+                      name="ZLONGITUDE"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZPICTURECACHEDATE]"
+                      name="ZPICTURECACHEDATE"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSEHOURSPERRESIDENTDAY]"
+                      name="ZREGISTEREDNURSEHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCATEGORYTYPE]"
+                      name="ZCATEGORYTYPE"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCITY]"
+                      name="ZCITY"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOUNCILTYPE]"
+                      name="ZCOUNCILTYPE"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZCOUNTYNAME]"
+                      name="ZCOUNTYNAME"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZID]"
+                      name="ZID"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZNAME]"
+                      name="ZNAME"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZOWNERSHIPTYPE]"
+                      name="ZOWNERSHIPTYPE"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZSPRINKLERSTATUS]"
+                      name="ZSPRINKLERSTATUS"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZSTATECODE]"
+                      name="ZSTATECODE"
+                      dataType="wstr"
+                      length="255" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input].ExternalColumns[ZSTREET]"
+                      name="ZSTREET"
+                      dataType="wstr"
+                      length="255" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ZHome.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ZHome.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\ZHome.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ZHome.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\ZHome.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ZStateAverage"
+              name="ZStateAverage"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              usesDispositions="true"
+              version="2"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2">
+              <properties>
+                <property
+                  name="TableOrViewName"
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                  expressionType="Notify">"ZSTATEAVERAGE"</property>
+                <property
+                  name="BatchSize"
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify">0</property>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify">30</property>
+                <property
+                  name="UseBulkInsertWhenPossible"
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify">true</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.SqlServer.Dts.Pipeline.ADONETDestination, Microsoft.SqlServer.ADONETDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ZStateAverage.Connections[IDbConnection]"
+                  name="IDbConnection"
+                  description="Managed connection manager"
+                  connectionManagerID="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLite3 Datasource]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input]"
+                  name="ADO NET Destination Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[Z_OPT]"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[Z_OPT]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_OPT]"
+                      cachedName="Z_OPT"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[Z_ENT]"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[Z_ENT]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_ENT]"
+                      cachedName="Z_ENT"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[CertifiedNurseAssistantHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY]"
+                      cachedName="CertifiedNurseAssistantHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[LicensedNurseHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[LicensedNurseHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDNURSEHOURSPERRESIDENTDAY]"
+                      cachedName="LicensedNurseHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[LicensedStaffHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[LicensedStaffHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDSTAFFHOURSPERRESIDENTDAY]"
+                      cachedName="LicensedStaffHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[Occupancy]"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[Occupancy]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZOCCUPANCY]"
+                      cachedName="Occupancy"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[RegisteredNurseHoursPerResidentDay]"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[RegisteredNurseHoursPerResidentDay]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSEHOURSPERRESIDENTDAY]"
+                      cachedName="RegisteredNurseHoursPerResidentDay"
+                      cachedDataType="r8" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].Columns[StateCode]"
+                      lineageId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output].Columns[StateCode]"
+                      externalMetadataColumnId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZSTATECODE]"
+                      cachedName="StateCode"
+                      cachedDataType="wstr"
+                      cachedLength="2" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_PK]"
+                      name="Z_PK"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_ENT]"
+                      name="Z_ENT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[Z_OPT]"
+                      name="Z_OPT"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY]"
+                      name="ZCERTIFIEDNURSEASSISTANTHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDNURSEHOURSPERRESIDENTDAY]"
+                      name="ZLICENSEDNURSEHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZLICENSEDSTAFFHOURSPERRESIDENTDAY]"
+                      name="ZLICENSEDSTAFFHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZOCCUPANCY]"
+                      name="ZOCCUPANCY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZREGISTEREDNURSEHOURSPERRESIDENTDAY]"
+                      name="ZREGISTEREDNURSEHOURSPERRESIDENTDAY"
+                      dataType="r8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input].ExternalColumns[ZSTATECODE]"
+                      name="ZSTATECODE"
+                      dataType="wstr"
+                      length="255" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ZStateAverage.Outputs[ADO NET Destination Error Output]"
+                  name="ADO NET Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Data Flow Task\ZStateAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ZStateAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Data Flow Task\ZStateAverage.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+              endId="Package\Data Flow Task\ZStateAverage.Inputs[ADO NET Destination Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+              endId="Package\Data Flow Task\ZHome.Inputs[ADO NET Destination Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column 1 1.Outputs[Derived Column Output]"
+              endId="Package\Data Flow Task\ZCountryAverage.Inputs[ADO NET Destination Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\vCountryAverage.Outputs[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Derived Column 1 1.Inputs[Derived Column Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\vStateAverage.Outputs[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\vHome.Outputs[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete ZCountryAverage"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete ZCountryAverage"
+      DTS:DTSID="{60dafe08-04ee-4008-9bf8-e17608edaf14}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}"
+          SQLTask:SqlStatementSource="delete from ZCOUNTRYAVERAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete ZHome"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete ZHome"
+      DTS:DTSID="{589CECCF-A83A-4464-B845-BD475DF01A9E}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}"
+          SQLTask:SqlStatementSource="delete from ZHOME" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete ZStateAverage"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete ZStateAverage"
+      DTS:DTSID="{515083bd-987b-4ad0-aed3-14c54067e0c2}"
+      DTS:Description="Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}"
+          SQLTask:SqlStatementSource="delete from ZSTATEAVERAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Delete ZHome"
+      DTS:To="Package\Delete ZCountryAverage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{B67D720F-28F0-4299-A8AC-9072686EB56B}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\Delete ZCountryAverage"
+      DTS:To="Package\Delete ZStateAverage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{081D7469-B32F-4912-9F16-608941DB126A}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:From="Package\Delete ZStateAverage"
+      DTS:To="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:DTSID="{E547C7F4-BB88-40D1-B361-35A6F95CF293}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="189.91666848585,225.933333441815" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Delete ZCountryAverage"
+          TopLeft="431.166660221914,65.8333321322998" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Delete ZHome"
+          TopLeft="197.166668467224,61.0000002324581" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Delete ZStateAverage"
+          TopLeft="366.749999124557,145.933335766395" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="330.500001800557,84.416666182379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.666658421357,0"
+              Start="0,0"
+              End="93.166658421357,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.166658421357,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="497.833326888581,107.8333321323">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64.4166610973572,38.1000036340949"
+              Start="0,0"
+              End="-64.4166610973572,30.6000036340949">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0500018170475" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0500018170475"
+                    Point2="0,19.0500018170475"
+                    Point3="-4,19.0500018170475" />
+                  <mssgle:LineSegment
+                    End="-60.4166610973572,19.0500018170475" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.4166610973572,19.0500018170475"
+                    Point2="-64.4166610973572,19.0500018170475"
+                    Point3="-64.4166610973572,23.0500018170475" />
+                  <mssgle:LineSegment
+                    End="-64.4166610973572,30.6000036340949" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="433.249999124557,187.933335766395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-168.333330638707,37.99999767542"
+              Start="0,0"
+              End="-168.333330638707,30.49999767542">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.99999883771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.99999883771"
+                    Point2="0,18.99999883771"
+                    Point3="-4,18.99999883771" />
+                  <mssgle:LineSegment
+                    End="-164.333330638707,18.99999883771" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-164.333330638707,18.99999883771"
+                    Point2="-168.333330638707,18.99999883771"
+                    Point3="-168.333330638707,22.99999883771" />
+                  <mssgle:LineSegment
+                    End="-168.333330638707,30.49999767542" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Data Flow Task\ZCountryAverage"
+          TopLeft="575,345" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Data Flow Task\vCountryAverage"
+          TopLeft="584.2499917609,169.933330652316" />
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\Data Flow Task\ZHome"
+          TopLeft="157.083333053936,269.799998930688" />
+        <NodeLayout
+          Size="111.2,41.6"
+          Id="Package\Data Flow Task\vHome"
+          TopLeft="217.499998820326,58.9666657910743" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Data Flow Task\ZStateAverage"
+          TopLeft="385.499994722506,353.766660305063" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="374.249994890144,261.233328614433" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Data Flow Task\vStateAverage"
+          TopLeft="384.249994741132,173.399996792077" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="142.999999677141,159.533332465487" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Data Flow Task\Derived Column 1 1"
+          TopLeft="573.833325249454,256.899995823498" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          TopLeft="272.833332153659,100.966665791074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-53.4999991431847,58.5666666744124"
+              Start="0,0"
+              End="-53.4999991431847,51.0666666744124">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2833333372062" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2833333372062"
+                    Point2="0,29.2833333372062"
+                    Point3="-4,29.2833333372062" />
+                  <mssgle:LineSegment
+                    End="-49.4999991431847,29.2833333372062" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-49.4999991431847,29.2833333372062"
+                    Point2="-53.4999991431847,29.2833333372062"
+                    Point3="-53.4999991431847,33.2833333372062" />
+                  <mssgle:LineSegment
+                    End="-53.4999991431847,51.0666666744124" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="456.249994815638,215.399996792077">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.8333318223553"
+              Start="0,0"
+              End="0,38.3333318223553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.3333318223553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="663.583325094233,211.933330652316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.74999984477938,44.9666651711812"
+              Start="0,0"
+              End="-8.74999984477938,37.4666651711812">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4833325855906" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4833325855906"
+                    Point2="0,22.4833325855906"
+                    Point3="-4,22.4833325855906" />
+                  <mssgle:LineSegment
+                    End="-4.74999984477938,22.4833325855906" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.74999984477938,22.4833325855906"
+                    Point2="-8.74999984477938,22.4833325855906"
+                    Point3="-8.74999984477938,26.4833325855906" />
+                  <mssgle:LineSegment
+                    End="-8.74999984477938,37.4666651711812" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="655.166662624727,298.899995823498">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.100004176502"
+              Start="0,0"
+              End="0,38.600004176502">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.600004176502" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="216.791666365539,201.533332465487">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.266666465201"
+              Start="0,0"
+              End="0,60.766666465201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.766666465201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="457.041661472992,303.233328614433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.53333169063"
+              Start="0,0"
+              End="0,43.03333169063">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.03333169063" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ZCountryAverage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\vCountryAverage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ZHome">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\vHome">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ZStateAverage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\vStateAverage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

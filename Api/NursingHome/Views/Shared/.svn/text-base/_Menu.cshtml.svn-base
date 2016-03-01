@@ -1,0 +1,10 @@
+﻿@using NursingHome.Infrastructure;
+<nav>
+	<ul class="menu">
+		<li>@Html.MenuLink("Manage Images", "Index", "Home")</li>
+		@if (Roles.IsUserInRole("Admin"))
+		{
+		//<li>@Html.MenuLink("Tasks", "Index", "Task")</li>
+		}
+	</ul>
+</nav>

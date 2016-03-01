@@ -1,0 +1,67 @@
+﻿@model List<NursingHome.Models.ReportModel>
+
+<h1>Reported <span>Pictures</span></h1>
+
+@if (Model.Count == 0)
+{
+    <h2>No pictures have been reported.</h2>
+    return;
+}
+
+<input type="submit" value="Select" id="Select" />
+<input type="submit" value="Deselect" id="Deselect" />
+@using (Html.BeginForm())
+{
+    <ul class="wrap">
+        @for (int i = 0; i < @Model.Count; ++i)
+        {
+            <li>
+                @Html.HiddenFor(m => m[i].ID) 
+                @{ string id = "IsReported-" + i; }
+                @Html.CheckBoxFor(m => m[i].IsChecked, new { id = @id})
+                <label for="@id"><img src="@Url.Action("LoadImage", new { id = @Model[i].ID})" /></label>
+            </li>
+        }
+    </ul>
+    <p>
+        <input type="submit" value="Ignore"  name="SubmitButton"/>
+        <input type="submit" value="Delete"  name="SubmitButton"/>
+    </p>
+}
+
+    @Scripts.Render("~/bundles/jquery")
+<script>
+    $(":checkbox").attr("hidden", true);
+    $("li img").addClass("deselect");
+    $(":checkbox").click(function () {
+        $(this).parent().find("img").toggleClass("select").toggleClass("deselect");
+    });
+    $("#Select").click(function () {
+        $(":checkbox").attr('checked', true);
+        $(":checkbox").parent().find("img").addClass("select").removeClass("deselect");
+    });
+    $("#Deselect").click(function () {
+        $(":checkbox").attr('checked', false);
+        $(":checkbox").parent().find("img").removeClass("select").addClass("deselect");
+    });
+    $("input[value='Delete']").click(function (event) {
+        event.preventDefault()
+        var confirm_box = confirm('Permanently delete ' + $(":checked").length + ' images?');
+        if (confirm_box) {
+            $(this).parents('form').submit();
+            //uncomment below and remove above if you want the link to open in a new window
+            //window.open(url,'_blank');
+        }
+    });
+
+</script>
+
+<style>
+    img.select { opacity:1.0; }
+    img.deselect { opacity: .4; }
+    .wrap { list-style-type: none; }
+        .wrap li { display: inline-block; margin:5px; position:relative;}
+        .wrap img { width: 150px; }
+        .wrap input[type="checkbox"] {position:absolute; bottom:0px; left:0px; width:15px; height:15px;}
+
+</style>

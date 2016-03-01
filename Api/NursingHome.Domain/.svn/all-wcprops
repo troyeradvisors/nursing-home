@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/166/trunk/WebServices/NursingHome/NursingHome.Domain
+END
+HomeModel.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/166/trunk/WebServices/NursingHome/NursingHome.Domain/HomeModel.Designer.cs
+END
+PictureHandler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/159/trunk/WebServices/NursingHome/NursingHome.Domain/PictureHandler.cs
+END
+packages.config
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/77/trunk/WebServices/NursingHome/NursingHome.Domain/packages.config
+END
+Repository.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome.Domain/Repository.cs
+END
+NursingHome.Domain.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome.Domain/NursingHome.Domain.csproj
+END
+App.Config
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/53/trunk/WebServices/NursingHome/NursingHome.Domain/App.Config
+END
+HomeModel.edmx
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/166/trunk/WebServices/NursingHome/NursingHome.Domain/HomeModel.edmx
+END
+HomeModel.edmx.diagram
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/166/trunk/WebServices/NursingHome/NursingHome.Domain/HomeModel.edmx.diagram
+END
+Entities.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/145/trunk/WebServices/NursingHome/NursingHome.Domain/Entities.cs
+END

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQLite3 Datasource"
+  DTS:DTSID="{4370DA4B-21FA-451C-952E-BCEC9C06D83A}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Dsn=SQLite3 Datasource;database=C:\Users\Allen\Documents\TroyerAdvisors\Databases\NursingHomeLite\NursingHome.sqlite;stepapi=0;syncpragma=NORMAL;notxn=0;timeout=100000;shortnames=0;longnames=0;nocreat=0;nowchar=0;fksupport=0;oemcp=0;bigint=0;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

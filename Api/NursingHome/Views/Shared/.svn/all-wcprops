@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome/Views/Shared
+END
+_LogOnPartial.cshtml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome/Views/Shared/_LogOnPartial.cshtml
+END
+_Layout.cshtml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome/Views/Shared/_Layout.cshtml
+END
+_Menu.cshtml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/104/trunk/WebServices/NursingHome/NursingHome/Views/Shared/_Menu.cshtml
+END
+Error.cshtml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/50/trunk/WebServices/NursingHome/NursingHome/Views/Shared/Error.cshtml
+END

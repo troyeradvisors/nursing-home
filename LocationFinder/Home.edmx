@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NursingHomeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NursingHomeModelStoreContainer">
+          <EntitySet Name="Home" EntityType="NursingHomeModel.Store.Home" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CountyCode" Type="int" />
+          <Property Name="CountyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateCode" Type="nchar" Nullable="false" MaxLength="2" />
+          <Property Name="ZipCode" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="bigint" Nullable="false" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="CategoryType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OwnershipType" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="HealthSurveyDate" Type="date" Nullable="false" />
+          <Property Name="FireSurveyDate" Type="date" Nullable="false" />
+          <Property Name="CertifiedBedCount" Type="int" Nullable="false" />
+          <Property Name="ResidentCount" Type="int" Nullable="false" />
+          <Property Name="SprinklerStatus" Type="nvarchar" Nullable="false" MaxLength="75" />
+          <Property Name="IsInHospital" Type="bit" Nullable="false" />
+          <Property Name="IsMultipleNursingHomeOwnership" Type="bit" Nullable="false" />
+          <Property Name="CouncilType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsInContinuingCareRetirementCommunity" Type="bit" Nullable="false" />
+          <Property Name="HasQualitySurvey" Type="bit" Nullable="false" />
+          <Property Name="IsSpecialFocusFacility" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NursingHomeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NursingHomeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Homes" EntityType="NursingHomeModel.Home" />
+        </EntityContainer>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CountyCode" Type="Int32" />
+          <Property Name="CountyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StateCode" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="ZipCode" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="Int64" Nullable="false" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="CategoryType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OwnershipType" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="HealthSurveyDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FireSurveyDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CertifiedBedCount" Type="Int32" Nullable="false" />
+          <Property Name="ResidentCount" Type="Int32" Nullable="false" />
+          <Property Name="SprinklerStatus" Type="String" Nullable="false" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="IsInHospital" Type="Boolean" Nullable="false" />
+          <Property Name="IsMultipleNursingHomeOwnership" Type="Boolean" Nullable="false" />
+          <Property Name="CouncilType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsInContinuingCareRetirementCommunity" Type="Boolean" Nullable="false" />
+          <Property Name="HasQualitySurvey" Type="Boolean" Nullable="false" />
+          <Property Name="IsSpecialFocusFacility" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NursingHomeModelStoreContainer" CdmEntityContainer="NursingHomeEntities">
+          <EntitySetMapping Name="Homes">
+            <EntityTypeMapping TypeName="NursingHomeModel.Home">
+              <MappingFragment StoreEntitySet="Home">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="CountyCode" ColumnName="CountyCode" />
+                <ScalarProperty Name="CountyName" ColumnName="CountyName" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
+                <ScalarProperty Name="OwnershipType" ColumnName="OwnershipType" />
+                <ScalarProperty Name="HealthSurveyDate" ColumnName="HealthSurveyDate" />
+                <ScalarProperty Name="FireSurveyDate" ColumnName="FireSurveyDate" />
+                <ScalarProperty Name="CertifiedBedCount" ColumnName="CertifiedBedCount" />
+                <ScalarProperty Name="ResidentCount" ColumnName="ResidentCount" />
+                <ScalarProperty Name="SprinklerStatus" ColumnName="SprinklerStatus" />
+                <ScalarProperty Name="IsInHospital" ColumnName="IsInHospital" />
+                <ScalarProperty Name="IsMultipleNursingHomeOwnership" ColumnName="IsMultipleNursingHomeOwnership" />
+                <ScalarProperty Name="CouncilType" ColumnName="CouncilType" />
+                <ScalarProperty Name="IsInContinuingCareRetirementCommunity" ColumnName="IsInContinuingCareRetirementCommunity" />
+                <ScalarProperty Name="HasQualitySurvey" ColumnName="HasQualitySurvey" />
+                <ScalarProperty Name="IsSpecialFocusFacility" ColumnName="IsSpecialFocusFacility" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

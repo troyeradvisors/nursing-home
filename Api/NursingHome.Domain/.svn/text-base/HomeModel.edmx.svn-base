@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HomeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HomeModelStoreContainer">
+          <EntitySet Name="Comment" EntityType="HomeModel.Store.Comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CommentSummary" EntityType="HomeModel.Store.CommentSummary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CommentVote" EntityType="HomeModel.Store.CommentVote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Picture" EntityType="HomeModel.Store.Picture" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PictureVote" EntityType="HomeModel.Store.PictureVote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vHome" EntityType="HomeModel.Store.vHome" store:Type="Views" store:Schema="dbo" store:Name="vHome">
+            <DefiningQuery>SELECT 
+      [vHome].[ID] AS [ID], 
+      [vHome].[Name] AS [Name], 
+      [vHome].[Street] AS [Street], 
+      [vHome].[City] AS [City], 
+      [vHome].[CountyCode] AS [CountyCode], 
+      [vHome].[CountyName] AS [CountyName], 
+      [vHome].[StateCode] AS [StateCode], 
+      [vHome].[ZipCode] AS [ZipCode], 
+      [vHome].[PhoneNumber] AS [PhoneNumber], 
+      [vHome].[Latitude] AS [Latitude], 
+      [vHome].[Longitude] AS [Longitude], 
+      [vHome].[CategoryType] AS [CategoryType], 
+      [vHome].[OwnershipType] AS [OwnershipType], 
+      [vHome].[HealthSurveyDate] AS [HealthSurveyDate], 
+      [vHome].[FireSurveyDate] AS [FireSurveyDate], 
+      [vHome].[CertifiedBedCount] AS [CertifiedBedCount], 
+      [vHome].[ResidentCount] AS [ResidentCount], 
+      [vHome].[SprinklerStatus] AS [SprinklerStatus], 
+      [vHome].[IsInHospital] AS [IsInHospital], 
+      [vHome].[IsMultipleNursingHomeOwnership] AS [IsMultipleNursingHomeOwnership], 
+      [vHome].[CouncilType] AS [CouncilType], 
+      [vHome].[IsInContinuingCareRetirementCommunity] AS [IsInContinuingCareRetirementCommunity], 
+      [vHome].[HasQualitySurvey] AS [HasQualitySurvey], 
+      [vHome].[IsSpecialFocusFacility] AS [IsSpecialFocusFacility], 
+      [vHome].[HealthInspectionRating] AS [HealthInspectionRating], 
+      [vHome].[NurseRating] AS [NurseRating], 
+      [vHome].[OverallRating] AS [OverallRating], 
+      [vHome].[QualityRating] AS [QualityRating], 
+      [vHome].[RegisteredNurseRating] AS [RegisteredNurseRating], 
+      [vHome].[RegisteredNurseHoursPerResidentDay] AS [RegisteredNurseHoursPerResidentDay], 
+      [vHome].[LicensedNurseHoursPerResidentDay] AS [LicensedNurseHoursPerResidentDay], 
+      [vHome].[LicensedStaffHoursPerResidentDay] AS [LicensedStaffHoursPerResidentDay], 
+      [vHome].[CertifiedNurseAssistantHoursPerResidentDay] AS [CertifiedNurseAssistantHoursPerResidentDay]
+      FROM [dbo].[vHome] AS [vHome]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vStateAverage" EntityType="HomeModel.Store.vStateAverage" store:Type="Views" store:Schema="dbo" store:Name="vStateAverage">
+            <DefiningQuery>SELECT 
+      [vStateAverage].[StateCode] AS [StateCode], 
+      [vStateAverage].[Occupancy] AS [Occupancy], 
+      [vStateAverage].[CertifiedNurseAssistantHoursPerResidentDay] AS [CertifiedNurseAssistantHoursPerResidentDay], 
+      [vStateAverage].[LicensedNurseHoursPerResidentDay] AS [LicensedNurseHoursPerResidentDay], 
+      [vStateAverage].[LicensedStaffHoursPerResidentDay] AS [LicensedStaffHoursPerResidentDay], 
+      [vStateAverage].[RegisteredNurseHoursPerResidentDay] AS [RegisteredNurseHoursPerResidentDay]
+      FROM [dbo].[vStateAverage] AS [vStateAverage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vSummary" EntityType="HomeModel.Store.vSummary" store:Type="Views" store:Schema="dbo" store:Name="vSummary">
+            <DefiningQuery>SELECT 
+      [vSummary].[HomeID] AS [HomeID], 
+      [vSummary].[Name] AS [Name], 
+      [vSummary].[Street] AS [Street], 
+      [vSummary].[Longitude] AS [Longitude], 
+      [vSummary].[Latitude] AS [Latitude], 
+      [vSummary].[HealthInspectionRating] AS [HealthInspectionRating], 
+      [vSummary].[PictureName] AS [PictureName], 
+      [vSummary].[UserRating] AS [UserRating], 
+      [vSummary].[UserRatingCount] AS [UserRatingCount], 
+      [vSummary].[CategoryType] AS [CategoryType], 
+      [vSummary].[OwnershipType] AS [OwnershipType], 
+      [vSummary].[IsInHospital] AS [IsInHospital], 
+      [vSummary].[IsMultipleNursingHomeOwnership] AS [IsMultipleNursingHomeOwnership], 
+      [vSummary].[IsInContinuingCareRetirementCommunity] AS [IsInContinuingCareRetirementCommunity], 
+      [vSummary].[IsSpecialFocusFacility] AS [IsSpecialFocusFacility]
+      FROM [dbo].[vSummary] AS [vSummary]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CommentRating_Comment" Association="HomeModel.Store.FK_CommentRating_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="CommentVote" EntitySet="CommentVote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PictureRating_Picture" Association="HomeModel.Store.FK_PictureRating_Picture">
+            <End Role="Picture" EntitySet="Picture" />
+            <End Role="PictureVote" EntitySet="PictureVote" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HomeID" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EditDate" Type="datetime" Nullable="false" />
+          <Property Name="Rating" Type="float" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="PositiveVotes" Type="int" Nullable="false" />
+          <Property Name="NegativeVotes" Type="int" Nullable="false" />
+          <Property Name="FriendlyRating" Type="float" Nullable="false" />
+          <Property Name="ResponsiveRating" Type="float" Nullable="false" />
+          <Property Name="RehabilitationRating" Type="float" Nullable="false" />
+          <Property Name="PhysicalAppealSafetyRating" Type="float" Nullable="false" />
+          <Property Name="MealExperienceRating" Type="float" Nullable="false" />
+          <Property Name="OdorRating" Type="float" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommentSummary">
+          <Key>
+            <PropertyRef Name="HomeID" />
+          </Key>
+          <Property Name="HomeID" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="FriendlyRating" Type="float" Nullable="false" />
+          <Property Name="ResponsiveRating" Type="float" Nullable="false" />
+          <Property Name="RehabilitationRating" Type="float" Nullable="false" />
+          <Property Name="PhysicalAppealSafetyRating" Type="float" Nullable="false" />
+          <Property Name="MealExperienceRating" Type="float" Nullable="false" />
+          <Property Name="OdorRating" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommentVote">
+          <Key>
+            <PropertyRef Name="CommentID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="CommentID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Vote" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HomeID" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Caption" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EditDate" Type="datetime" Nullable="false" />
+          <Property Name="PositiveVotes" Type="int" Nullable="false" />
+          <Property Name="NegativeVotes" Type="int" Nullable="false" />
+          <Property Name="IsReported" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PictureVote">
+          <Key>
+            <PropertyRef Name="PictureID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="PictureID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Vote" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NursingHome.dbo.vHome' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vHome">
+          <Key>
+            <PropertyRef Name="ID" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CountyCode" Type="int" />
+          <Property Name="CountyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateCode" Type="nchar" Nullable="false" MaxLength="2" />
+          <Property Name="ZipCode" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="bigint" Nullable="false" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="CategoryType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OwnershipType" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="HealthSurveyDate" Type="date" Nullable="false" />
+          <Property Name="FireSurveyDate" Type="date" Nullable="false" />
+          <Property Name="CertifiedBedCount" Type="int" Nullable="false" />
+          <Property Name="ResidentCount" Type="int" Nullable="false" />
+          <Property Name="SprinklerStatus" Type="nvarchar" Nullable="false" MaxLength="75" />
+          <Property Name="IsInHospital" Type="bit" Nullable="false" />
+          <Property Name="IsMultipleNursingHomeOwnership" Type="bit" Nullable="false" />
+          <Property Name="CouncilType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsInContinuingCareRetirementCommunity" Type="bit" Nullable="false" />
+          <Property Name="HasQualitySurvey" Type="bit" Nullable="false" />
+          <Property Name="IsSpecialFocusFacility" Type="bit" Nullable="false" />
+          <Property Name="HealthInspectionRating" Type="tinyint" />
+          <Property Name="NurseRating" Type="tinyint" />
+          <Property Name="OverallRating" Type="tinyint" />
+          <Property Name="QualityRating" Type="tinyint" />
+          <Property Name="RegisteredNurseRating" Type="tinyint" />
+          <Property Name="RegisteredNurseHoursPerResidentDay" Type="float" />
+          <Property Name="LicensedNurseHoursPerResidentDay" Type="float" />
+          <Property Name="LicensedStaffHoursPerResidentDay" Type="float" />
+          <Property Name="CertifiedNurseAssistantHoursPerResidentDay" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NursingHome.dbo.vStateAverage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vStateAverage">
+          <Key>
+            <PropertyRef Name="StateCode" />
+          </Key>
+          <Property Name="StateCode" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="Occupancy" Type="float" />
+          <Property Name="CertifiedNurseAssistantHoursPerResidentDay" Type="float" />
+          <Property Name="LicensedNurseHoursPerResidentDay" Type="float" />
+          <Property Name="LicensedStaffHoursPerResidentDay" Type="float" />
+          <Property Name="RegisteredNurseHoursPerResidentDay" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'NursingHome.dbo.vSummary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vSummary">
+          <Key>
+            <PropertyRef Name="HomeID" />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          </Key>
+          <Property Name="HomeID" Type="nvarchar" Nullable="false" MaxLength="6" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Street" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="HealthInspectionRating" Type="tinyint" />
+          <Property Name="PictureName" Type="nvarchar(max)" />
+          <Property Name="UserRating" Type="float" />
+          <Property Name="UserRatingCount" Type="int" Nullable="false" />
+          <Property Name="CategoryType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OwnershipType" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IsInHospital" Type="bit" Nullable="false" />
+          <Property Name="IsMultipleNursingHomeOwnership" Type="bit" Nullable="false" />
+          <Property Name="IsInContinuingCareRetirementCommunity" Type="bit" Nullable="false" />
+          <Property Name="IsSpecialFocusFacility" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CommentRating_Comment">
+          <End Role="Comment" Type="HomeModel.Store.Comment" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CommentVote" Type="HomeModel.Store.CommentVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommentVote">
+              <PropertyRef Name="CommentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PictureRating_Picture">
+          <End Role="Picture" Type="HomeModel.Store.Picture" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PictureVote" Type="HomeModel.Store.PictureVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Picture">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PictureVote">
+              <PropertyRef Name="PictureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HomeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="HomeEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Comments" EntityType="HomeModel.Comment" />
+          <EntitySet Name="CommentVotes" EntityType="HomeModel.CommentVote" />
+          <EntitySet Name="Pictures" EntityType="HomeModel.Picture" />
+          <EntitySet Name="PictureVotes" EntityType="HomeModel.PictureVote" />
+          <AssociationSet Name="FK_CommentRating_Comment" Association="HomeModel.FK_CommentRating_Comment">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="CommentVote" EntitySet="CommentVotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PictureRating_Picture" Association="HomeModel.FK_PictureRating_Picture">
+            <End Role="Picture" EntitySet="Pictures" />
+            <End Role="PictureVote" EntitySet="PictureVotes" />
+          </AssociationSet>
+          <EntitySet Name="Homes" EntityType="HomeModel.Home" />
+          <EntitySet Name="StateAverages" EntityType="HomeModel.StateAverage" />
+          <AssociationSet Name="HomeComment" Association="HomeModel.HomeComment">
+            <End Role="Home" EntitySet="Homes" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="HomePicture" Association="HomeModel.HomePicture">
+            <End Role="Home" EntitySet="Homes" />
+            <End Role="Picture" EntitySet="Pictures" />
+          </AssociationSet>
+          <AssociationSet Name="StateAverageHome" Association="HomeModel.StateAverageHome">
+            <End Role="StateAverage" EntitySet="StateAverages" />
+            <End Role="Home" EntitySet="Homes" />
+          </AssociationSet>
+          <EntitySet Name="Summaries" EntityType="HomeModel.Summary" />
+          <EntitySet Name="CommentSummaries" EntityType="HomeModel.CommentSummary" />
+        </EntityContainer>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="HomeID" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="DateTime" Name="EditDate" Nullable="false" Precision="3" />
+          <Property Type="Double" Name="Rating" Nullable="false" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PositiveVotes" Nullable="false" />
+          <Property Type="Int32" Name="NegativeVotes" Nullable="false" />
+          <NavigationProperty Name="CommentVotes" Relationship="HomeModel.FK_CommentRating_Comment" FromRole="Comment" ToRole="CommentVote" />
+          <NavigationProperty Name="Home" Relationship="HomeModel.HomeComment" FromRole="Comment" ToRole="Home" />
+          <Property Type="Double" Name="FriendlyRating" Nullable="false" />
+          <Property Type="Double" Name="ResponsiveRating" Nullable="false" />
+          <Property Type="Double" Name="RehabilitationRating" Nullable="false" />
+          <Property Type="Double" Name="PhysicalAppealSafetyRating" Nullable="false" />
+          <Property Type="Double" Name="MealExperienceRating" Nullable="false" />
+          <Property Type="Double" Name="OdorRating" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommentVote">
+          <Key>
+            <PropertyRef Name="CommentID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="CommentID" Nullable="false" />
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="Boolean" Name="Vote" Nullable="false" />
+          <NavigationProperty Name="Comment" Relationship="HomeModel.FK_CommentRating_Comment" FromRole="CommentVote" ToRole="Comment" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="HomeID" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Caption" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="EditDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="PositiveVotes" Nullable="false" />
+          <Property Type="Int32" Name="NegativeVotes" Nullable="false" />
+          <NavigationProperty Name="PictureVotes" Relationship="HomeModel.FK_PictureRating_Picture" FromRole="Picture" ToRole="PictureVote" />
+          <Property Type="String" Name="FileName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsReported" Nullable="false" />
+          <NavigationProperty Name="Home" Relationship="HomeModel.HomePicture" FromRole="Picture" ToRole="Home" />
+        </EntityType>
+        <EntityType Name="PictureVote">
+          <Key>
+            <PropertyRef Name="PictureID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="PictureID" Nullable="false" />
+          <Property Type="Guid" Name="UserID" Nullable="false" />
+          <Property Type="Boolean" Name="Vote" Nullable="false" />
+          <NavigationProperty Name="Picture" Relationship="HomeModel.FK_PictureRating_Picture" FromRole="PictureVote" ToRole="Picture" />
+        </EntityType>
+        <Association Name="FK_CommentRating_Comment">
+          <End Type="HomeModel.Comment" Role="Comment" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="HomeModel.CommentVote" Role="CommentVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommentVote">
+              <PropertyRef Name="CommentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PictureRating_Picture">
+          <End Type="HomeModel.Picture" Role="Picture" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="HomeModel.PictureVote" Role="PictureVote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Picture">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PictureVote">
+              <PropertyRef Name="PictureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Home">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="ID" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Street" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CountyCode" />
+          <Property Type="String" Name="CountyName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="ZipCode" Nullable="false" />
+          <Property Type="Int64" Name="PhoneNumber" Nullable="false" />
+          <Property Type="Double" Name="Latitude" />
+          <Property Type="Double" Name="Longitude" />
+          <Property Type="String" Name="CategoryType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OwnershipType" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="HealthSurveyDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="FireSurveyDate" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="CertifiedBedCount" Nullable="false" />
+          <Property Type="Int32" Name="ResidentCount" Nullable="false" />
+          <Property Type="String" Name="SprinklerStatus" Nullable="false" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsInHospital" Nullable="false" />
+          <Property Type="Boolean" Name="IsMultipleNursingHomeOwnership" Nullable="false" />
+          <Property Type="String" Name="CouncilType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsInContinuingCareRetirementCommunity" Nullable="false" />
+          <Property Type="Boolean" Name="HasQualitySurvey" Nullable="false" />
+          <Property Type="Boolean" Name="IsSpecialFocusFacility" Nullable="false" />
+          <Property Type="Byte" Name="HealthInspectionRating" />
+          <Property Type="Byte" Name="NurseRating" />
+          <Property Type="Byte" Name="OverallRating" />
+          <Property Type="Byte" Name="QualityRating" />
+          <Property Type="Byte" Name="RegisteredNurseRating" />
+          <Property Type="Double" Name="RegisteredNurseHoursPerResidentDay" />
+          <Property Type="Double" Name="LicensedNurseHoursPerResidentDay" />
+          <Property Type="Double" Name="LicensedStaffHoursPerResidentDay" />
+          <Property Type="Double" Name="CertifiedNurseAssistantHoursPerResidentDay" />
+          <NavigationProperty Name="Comments" Relationship="HomeModel.HomeComment" FromRole="Home" ToRole="Comment" />
+          <NavigationProperty Name="Pictures" Relationship="HomeModel.HomePicture" FromRole="Home" ToRole="Picture" />
+          <NavigationProperty Name="StateAverage" Relationship="HomeModel.StateAverageHome" FromRole="Home" ToRole="StateAverage" />
+        </EntityType>
+        <EntityType Name="StateAverage">
+          <Key>
+            <PropertyRef Name="StateCode" />
+          </Key>
+          <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Occupancy" />
+          <Property Type="Double" Name="CertifiedNurseAssistantHoursPerResidentDay" />
+          <Property Type="Double" Name="LicensedNurseHoursPerResidentDay" />
+          <Property Type="Double" Name="LicensedStaffHoursPerResidentDay" />
+          <Property Type="Double" Name="RegisteredNurseHoursPerResidentDay" />
+          <NavigationProperty Name="Homes" Relationship="HomeModel.StateAverageHome" FromRole="StateAverage" ToRole="Home" />
+        </EntityType>
+        <Association Name="HomeComment">
+          <End Type="HomeModel.Home" Role="Home" Multiplicity="1" />
+          <End Type="HomeModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="HomeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HomePicture">
+          <End Type="HomeModel.Home" Role="Home" Multiplicity="1" />
+          <End Type="HomeModel.Picture" Role="Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Home">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Picture">
+              <PropertyRef Name="HomeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StateAverageHome">
+          <End Type="HomeModel.StateAverage" Role="StateAverage" Multiplicity="1" />
+          <End Type="HomeModel.Home" Role="Home" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StateAverage">
+              <PropertyRef Name="StateCode" />
+            </Principal>
+            <Dependent Role="Home">
+              <PropertyRef Name="StateCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Summary">
+          <Key>
+            <PropertyRef Name="HomeID" />
+          </Key>
+          <Property Type="String" Name="HomeID" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Street" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Byte" Name="HealthInspectionRating" />
+          <Property Type="String" Name="PictureName" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="UserRating" />
+          <Property Type="Int32" Name="UserRatingCount" Nullable="false" />
+          <Property Type="String" Name="CategoryType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OwnershipType" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsInHospital" Nullable="false" />
+          <Property Type="Boolean" Name="IsMultipleNursingHomeOwnership" Nullable="false" />
+          <Property Type="Boolean" Name="IsInContinuingCareRetirementCommunity" Nullable="false" />
+          <Property Type="Boolean" Name="IsSpecialFocusFacility" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommentSummary">
+          <Key>
+            <PropertyRef Name="HomeID" />
+          </Key>
+          <Property Type="String" Name="HomeID" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="FriendlyRating" Nullable="false" />
+          <Property Type="Double" Name="ResponsiveRating" Nullable="false" />
+          <Property Type="Double" Name="RehabilitationRating" Nullable="false" />
+          <Property Type="Double" Name="PhysicalAppealSafetyRating" Nullable="false" />
+          <Property Type="Double" Name="MealExperienceRating" Nullable="false" />
+          <Property Type="Double" Name="OdorRating" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HomeModelStoreContainer" CdmEntityContainer="HomeEntities">
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="HomeModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="OdorRating" ColumnName="OdorRating" />
+                <ScalarProperty Name="MealExperienceRating" ColumnName="MealExperienceRating" />
+                <ScalarProperty Name="PhysicalAppealSafetyRating" ColumnName="PhysicalAppealSafetyRating" />
+                <ScalarProperty Name="RehabilitationRating" ColumnName="RehabilitationRating" />
+                <ScalarProperty Name="ResponsiveRating" ColumnName="ResponsiveRating" />
+                <ScalarProperty Name="FriendlyRating" ColumnName="FriendlyRating" />
+                <ScalarProperty Name="NegativeVotes" ColumnName="NegativeVotes" />
+                <ScalarProperty Name="PositiveVotes" ColumnName="PositiveVotes" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentVotes">
+            <EntityTypeMapping TypeName="HomeModel.CommentVote">
+              <MappingFragment StoreEntitySet="CommentVote">
+                <ScalarProperty Name="Vote" ColumnName="Vote" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="HomeModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="IsReported" ColumnName="IsReported" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="NegativeVotes" ColumnName="NegativeVotes" />
+                <ScalarProperty Name="PositiveVotes" ColumnName="PositiveVotes" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PictureVotes">
+            <EntityTypeMapping TypeName="HomeModel.PictureVote">
+              <MappingFragment StoreEntitySet="PictureVote">
+                <ScalarProperty Name="Vote" ColumnName="Vote" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="PictureID" ColumnName="PictureID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homes">
+            <EntityTypeMapping TypeName="HomeModel.Home">
+              <MappingFragment StoreEntitySet="vHome">
+                <ScalarProperty Name="CertifiedNurseAssistantHoursPerResidentDay" ColumnName="CertifiedNurseAssistantHoursPerResidentDay" />
+                <ScalarProperty Name="LicensedStaffHoursPerResidentDay" ColumnName="LicensedStaffHoursPerResidentDay" />
+                <ScalarProperty Name="LicensedNurseHoursPerResidentDay" ColumnName="LicensedNurseHoursPerResidentDay" />
+                <ScalarProperty Name="RegisteredNurseHoursPerResidentDay" ColumnName="RegisteredNurseHoursPerResidentDay" />
+                <ScalarProperty Name="RegisteredNurseRating" ColumnName="RegisteredNurseRating" />
+                <ScalarProperty Name="QualityRating" ColumnName="QualityRating" />
+                <ScalarProperty Name="OverallRating" ColumnName="OverallRating" />
+                <ScalarProperty Name="NurseRating" ColumnName="NurseRating" />
+                <ScalarProperty Name="HealthInspectionRating" ColumnName="HealthInspectionRating" />
+                <ScalarProperty Name="IsSpecialFocusFacility" ColumnName="IsSpecialFocusFacility" />
+                <ScalarProperty Name="HasQualitySurvey" ColumnName="HasQualitySurvey" />
+                <ScalarProperty Name="IsInContinuingCareRetirementCommunity" ColumnName="IsInContinuingCareRetirementCommunity" />
+                <ScalarProperty Name="CouncilType" ColumnName="CouncilType" />
+                <ScalarProperty Name="IsMultipleNursingHomeOwnership" ColumnName="IsMultipleNursingHomeOwnership" />
+                <ScalarProperty Name="IsInHospital" ColumnName="IsInHospital" />
+                <ScalarProperty Name="SprinklerStatus" ColumnName="SprinklerStatus" />
+                <ScalarProperty Name="ResidentCount" ColumnName="ResidentCount" />
+                <ScalarProperty Name="CertifiedBedCount" ColumnName="CertifiedBedCount" />
+                <ScalarProperty Name="FireSurveyDate" ColumnName="FireSurveyDate" />
+                <ScalarProperty Name="HealthSurveyDate" ColumnName="HealthSurveyDate" />
+                <ScalarProperty Name="OwnershipType" ColumnName="OwnershipType" />
+                <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="CountyName" ColumnName="CountyName" />
+                <ScalarProperty Name="CountyCode" ColumnName="CountyCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateAverages">
+            <EntityTypeMapping TypeName="HomeModel.StateAverage">
+              <MappingFragment StoreEntitySet="vStateAverage">
+                <ScalarProperty Name="RegisteredNurseHoursPerResidentDay" ColumnName="RegisteredNurseHoursPerResidentDay" />
+                <ScalarProperty Name="LicensedStaffHoursPerResidentDay" ColumnName="LicensedStaffHoursPerResidentDay" />
+                <ScalarProperty Name="LicensedNurseHoursPerResidentDay" ColumnName="LicensedNurseHoursPerResidentDay" />
+                <ScalarProperty Name="CertifiedNurseAssistantHoursPerResidentDay" ColumnName="CertifiedNurseAssistantHoursPerResidentDay" />
+                <ScalarProperty Name="Occupancy" ColumnName="Occupancy" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Summaries">
+            <EntityTypeMapping TypeName="HomeModel.Summary">
+              <MappingFragment StoreEntitySet="vSummary">
+                <ScalarProperty Name="IsSpecialFocusFacility" ColumnName="IsSpecialFocusFacility" />
+                <ScalarProperty Name="IsInContinuingCareRetirementCommunity" ColumnName="IsInContinuingCareRetirementCommunity" />
+                <ScalarProperty Name="IsMultipleNursingHomeOwnership" ColumnName="IsMultipleNursingHomeOwnership" />
+                <ScalarProperty Name="IsInHospital" ColumnName="IsInHospital" />
+                <ScalarProperty Name="OwnershipType" ColumnName="OwnershipType" />
+                <ScalarProperty Name="CategoryType" ColumnName="CategoryType" />
+                <ScalarProperty Name="UserRatingCount" ColumnName="UserRatingCount" />
+                <ScalarProperty Name="UserRating" ColumnName="UserRating" />
+                <ScalarProperty Name="PictureName" ColumnName="PictureName" />
+                <ScalarProperty Name="HealthInspectionRating" ColumnName="HealthInspectionRating" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentSummaries">
+            <EntityTypeMapping TypeName="HomeModel.CommentSummary">
+              <MappingFragment StoreEntitySet="CommentSummary">
+                <ScalarProperty Name="OdorRating" ColumnName="OdorRating" />
+                <ScalarProperty Name="MealExperienceRating" ColumnName="MealExperienceRating" />
+                <ScalarProperty Name="PhysicalAppealSafetyRating" ColumnName="PhysicalAppealSafetyRating" />
+                <ScalarProperty Name="RehabilitationRating" ColumnName="RehabilitationRating" />
+                <ScalarProperty Name="ResponsiveRating" ColumnName="ResponsiveRating" />
+                <ScalarProperty Name="FriendlyRating" ColumnName="FriendlyRating" />
+                <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>
